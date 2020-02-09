@@ -8,6 +8,7 @@ module.exports = {
         require('autoprefixer'),
         production && purgecss({
             content: ['./**/*.html', './**/*.svelte'],
+            whitelistPatterns: [/hljs/],
             defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
         })
     ]

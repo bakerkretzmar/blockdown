@@ -11,14 +11,27 @@ module.exports = {
         customForms: theme => ({
             default: {
                 textarea: {
-                    backgroundColor: theme('colors.gray.800'),
+                    backgroundColor: theme('colors.gray.200'),
+                    borderColor: theme('colors.gray.600'),
+                    borderWidth: theme('borderWidth.2'),
                     borderRadius: theme('borderRadius.lg'),
+                    paddingTop: theme('spacing.4'),
+                    paddingRight: theme('spacing.6'),
+                    paddingBottom: theme('spacing.4'),
+                    paddingLeft: theme('spacing.6'),
                     fontSize: 'inherit',
+                    '&:focus': {
+                        outline: 'none',
+                        boxShadow: 'none',
+                        borderColor: theme('colors.blue.400'),
+                    },
                 },
             },
         }),
     },
-    variants: {},
+    variants: {
+        opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    },
     plugins: [
         require('@tailwindcss/custom-forms'),
     ],
